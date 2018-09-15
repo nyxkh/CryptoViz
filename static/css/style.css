@@ -1,0 +1,55 @@
+html, body
+{
+	margin: 0;
+	height: 100%;
+}
+
+.nav-wrapper
+{
+	background-color: #606060;
+}
+
+.card-title
+{
+	color: #050505;
+}
+
+.info
+{
+	font-size: 30px;
+}
+
+.userCol
+{
+	background-color: #e1e1e1;
+}
+
+i
+{
+	color: #3b3b3b;
+	float: right;
+	padding-top: 4%;
+}
+
+.card
+{
+	padding-top: 4%;
+}
+
+.row
+{
+	padding-top: 1.6%;
+}
+
+.heading
+{
+	text-align: center;
+	font-size: 50px;
+	background-color: #e1e1e1;
+}
+
+	
+	
+	
+	
+	

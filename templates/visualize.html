@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Visualization</title>
+		<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<link rel="stylesheet" href="./static/css/style.css">
+		<link rel="stylesheet" href="./static/css/materialize.min.css">
+		<script type="text/javascript" src="./static/js/crypto-markets.json"></script>
+		<script type="text/javascript" src="./static/js/charts.js"></script>
+		<script src="./static/lib/materialize.min.js"></script>
+		<script src="./static/js/script.js"></script>		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
+		
+	</head>
+	
+	<body onload="load()">   <!-- The load() function defined in the file chart.js is invoked after the body of the html page has been loaded -->
+		<!-- NavBar using Materialize-->
+		<nav>
+			<div class="nav-wrapper">
+			  <a href="#!" class="brand-logo center">Crypto-currency Visualization</a>
+			  <ul class="left hide-on-med-and-down">
+				<li><a href="index.html">About</a></li>
+				<li class="active"><a href="#!">Visualize</a></li>
+			  </ul>
+			</div>
+		</nav>
+		
+		<!-- Grid using Materialize -->
+		<div class="row">
+			<div class="col s12 heading" >Top crypto-currencies by volume</div>
+
+			<div class="col s2">
+				<form id="topVolumesRecent" action="" method="get">
+					<p>
+					  <input name="group1" type="radio" id="test1" value="10"/>
+					  <label for="test1">Top 10</label>
+					</p>
+					<p>
+					  <input name="group1" type="radio" id="test2" value="25"/>
+					  <label for="test2">Top 25</label>
+					</p>
+					<p>
+					  <input name="group1" type="radio" id="test3"  value="50"/>
+					  <label for="test3">Top 50</label>
+					</p>
+					<p>
+					  <input name="group1" type="radio" id="test4" value="100"/>
+					  <label for="test4">Top 100</label>
+					</p>
+				  
+					<a class="waves-effect waves-light btn" onclick="topVolumesRecentViz();">Plot</a>
+				</form>
+			</div>
+			<div class="col s10" id="topvolumesRecentDiv"> <!-- Doughnut chart using Chart.js -->
+				<canvas id="myChart" width="200" height="200"></canvas>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col s12 heading" >Crypto-currency prices</div> <!-- Line chart using Chart.js -->
+
+			<div class="col s2">
+				<select id="cryptosList">
+					<option value="" disabled selected>Choose your option</option>
+				</select>
+				<label>Select crypto-currency to visualize</label>
+				 <div id="test-slider"></div>	
+				 <select id="numDaysPrice">
+					<option value="0" disabled selected>Choose your option</option>
+					<option value="100">100 days</option>
+					<option value="200">200 days</option>
+					<option value="300">300 days</option>
+					<option value="400">400 days</option>
+					<option value="500">500 days</option>
+				</select>
+				<a class="waves-effect waves-light btn" onclick="pricesViz();">Plot</a>
+
+			</div>
+			<div class="col s10" id="pricesDiv">
+				<canvas id="cryptoPriceChart" width="200" height="200"></canvas>
+			</div>
+		</div>
+		
+		<div class="row">
+		
+			<div class="col s12 heading" >Crypto-currency prices</div> <!-- Interactive line chart using plotly.js -->
+			
+			<div class="col s2">
+				<select id="cryptosListPlotly">
+					<option value="" disabled selected>Choose your option</option>
+				</select>
+				<label>Select crypto-currency to visualize</label>
+
+				<a class="waves-effect waves-light btn" onclick="pricesPlotlyViz();">Plot</a>
+
+			</div>
+			<div class="col s10" id="pricesPlotlyDiv">
+				
+			</div>
+		</div>
+		
+		<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+		
+		</body>
+</html>

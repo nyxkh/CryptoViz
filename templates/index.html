@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Visualization</title>
+		<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<link rel="stylesheet" href="./static/css/style.css">
+		<link rel="stylesheet" href="./static/css/materialize.min.css">
+		<script type="text/javascript" src="./static/js/crypto-markets.json"></script>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<script type="text/javascript" src="./static/js/charts.js"></script>
+	</head>
+	
+	<body onload="load_index()">
+		<!-- NavBar -->
+		<nav>
+			<div class="nav-wrapper">
+			  <a href="#!" class="brand-logo center">Crypto-currency Visualization</a>
+			  <ul class="left hide-on-med-and-down">
+				<li class="active"><a href="#!">About</a></li>
+				<li><a href="visualize.html">Visualize</a></li>
+			  </ul>
+			</div>
+		</nav>
+		
+		<!-- Parallax -->
+		<div class="parallax-container">
+			<div class="parallax"><img src="./static/background1.png"></div>
+		  </div>
+		  <div class="section white">
+			<div class="row container">
+				<div class="row">
+					<div class="col s1 m4">
+					  <div class="card blue-grey darken-1">
+						<div class="card-content white-text">
+						  <span class="card-title">Number of days of data: <i class="medium material-icons">access_time</i></span>
+						  <p class="info">{{ ndays }}</p>
+						</div>
+					  </div>
+					</div>
+					
+					<div class="col s1 m4">
+					  <div class="card blue-grey darken-1">
+						<div class="card-content white-text">
+						  <span class="card-title">Number of rows of data: <i class="medium material-icons">dehaze</i></span>
+						  <p class="info">{{ nrows }}</p>
+						</div>
+					  </div>
+					</div>
+					
+					<div class="col s1 m4">
+					  <div class="card blue-grey darken-1">
+						<div class="card-content white-text">
+						  <span class="card-title">Number of crypto tokens: <i class="medium material-icons">monetization_on</i></span>
+						  <p class="info">{{ ncrypts }}</p>
+						</div>
+					  </div>
+					</div>
+					
+				</div>
+				
+				<!-- Grid using Materialize -->
+				<div class="row">
+				
+					<div class="col s1 m4">
+					  <div class="card blue-grey darken-1">
+						<div class="card-content white-text">
+						  <span class="card-title">Currently ranked number 1: <i class="medium material-icons">looks_one</i></span>
+						  <p class="info">{{ nOne }}</p>
+						</div>
+					  </div>
+					</div>
+					
+					<div class="col s1 m4">
+					  <div class="card blue-grey darken-1">
+						<div class="card-content white-text">
+						  <span class="card-title">Price of number 1: <i class="medium material-icons">local_atm</i></span>
+						  <p class="info">{{ onePrice }}   USD</p>
+						</div>
+					  </div>
+					</div>
+					
+					<div class="col s1 m4">
+					  <div class="card blue-grey darken-1">
+						<div class="card-content white-text">
+						  <span class="card-title">Volume of number 1: <i class="medium material-icons">insert_chart</i></span>
+						  <p class="info">{{ oneVol }}</p>
+						</div>
+					  </div>
+					</div>
+				</div>
+				
+				<div class="row">
+				
+					<div class="col s1 m4">
+					  <div class="card blue-grey darken-1 userCol">
+						<div class="card-content white-text">
+						  <span class="card-title">Select crypto currency: <i class="medium material-icons"></i></span> <!-- Price and volume of crypto-currency -->
+							<select id="cryptosList">
+								<option value="" disabled selected>Choose your option</option>
+							</select>
+							<a class="waves-effect waves-light btn" onclick="indexVals();">Update</a>
+						</div>
+					  </div>
+					</div>
+					
+					<div class="col s1 m4">
+					  <div class="card blue-grey darken-1 userCol">
+						<div class="card-content white-text">
+						  <span class="card-title">Price: <i class="medium material-icons">local_atm</i></span> <!-- Current price of selected crypto-currency -->
+						  </br>
+						  <p class="info" id="priceP">&nbsp</p>
+						  </br>
+						</div>
+					  </div>
+					</div>
+					
+					<div class="col s1 m4">
+					  <div class="card blue-grey darken-1 userCol">
+						<div class="card-content white-text">
+						  <span class="card-title">Volume: <i class="medium material-icons">insert_chart</i></span> <!-- Current volume of selected crypto-currency -->
+						  </br>
+						  <p class="info", id="volumeP">&nbsp</p>
+						  </br>
+						</div>
+					  </div>
+					</div>
+				</div>
+				
+			</div>
+		  </div>
+		  <div class="parallax-container">
+			<div class="parallax"><img src="./static/background1.png"></div>
+		</div>
+
+		<script src="./static/lib/materialize.min.js"></script>
+		<script src="./static/js/script.js"></script>
+	</body>
+	
+</html>
